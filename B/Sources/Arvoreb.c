@@ -229,3 +229,15 @@ void Testa(Pont p)
     TestaI(p->p[i], p->r[i].Chave, 0);
   TestaI(p->p[p->n], p->r[i].Chave, 1);
 }
+
+void Ordem(Pont p){
+  int i;
+  if (p != NULL){
+    for (i = 0; i < p->n; i++){
+        Ordem(p->p[i]);
+        printf("%ld ", p->r[i].Chave);
+        printf("\n");
+    }
+        Ordem(p->p[i]);
+    }
+}

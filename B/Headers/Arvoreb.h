@@ -34,5 +34,6 @@ void ImprimeI(Pont p, int nivel);
 void Imprime(Pont p);
 void TestaI(Pont p, int pai, short direita);
 void Testa(Pont p);
+void Ordem(Pont p);
 
 #endif

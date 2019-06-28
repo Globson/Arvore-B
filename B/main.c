@@ -9,11 +9,11 @@ int main(int argc, char *argv[])
   while(1){
     int a=0,b=2;
     menu();
-    while(a!=1 && a!=2 && a!=3 && a!=9){
+    while(a!=1 && a!=2 && a!=3 && a!=4 && a!=9){
       printf("Entre com a opcao desejada:");
       scanf("%d",&a);
       getchar();
-      if(a!=1 && a!=2 && a!=3 && a!=9){
+      if(a!=1 && a!=2 && a!=3 && a!=4 && a!=9){
         printf("\n\tErro! Opcao invalida!\n\n");}}
 
       if(a == 1){
@@ -37,6 +37,9 @@ int main(int argc, char *argv[])
         Pesquisa(&x,D);
         Imprime(D);
         Testa(D);
+      }
+      else if (a == 4){
+        Ordem(D);
       }
       else if (a == 9){
         confirmacao();
