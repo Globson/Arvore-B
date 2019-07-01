@@ -7,13 +7,14 @@ void Inicializa(Pont *Dicionario)//Incializa o ponteiro da árvore
 void Pesquisa(TReg *x, Pont Ap)//Função que pesquisa um registro na árvore
 { long i = 1;
   if (Ap == NULL)//Caso o ponteiro chegue em uma posição vazia
-  { printf("Registro não presente na Arvore!\n");
+  { printf("-->Registro não presente na Arvore!<--\n");
     return;//Fim da chamada
   }
   while (i < Ap->n && x->Chave > Ap->r[i-1].Chave) i++;//Avança com o contador enquanto não atingir o número atual de chaves
   //E enquanto a chave não for menor ou igual ao registro correspondente a posição do contador menos um
   if (x->Chave == Ap->r[i-1].Chave)//Se a chave procurada é igual ao registro contido na árvore:
   { *x = Ap->r[i-1];//Chave procurada pertence à árvore
+    printf("-->Registro encontrado!<--\n");
     return;//Fim da chamada
   }
   if (x->Chave < Ap->r[i-1].Chave)//Se a chave procurada é menor ao registro contido na árvore:
@@ -50,7 +51,7 @@ void Ins(TReg Reg, Pont Ap, short *Cresceu, TReg *RegRetorno, Pont *ApRetorno)//
   while (i < Ap->n && Reg.Chave > Ap->r[i-1].Chave)  i++;//Avança com o contador enquanto não atingir o número atual de chaves
   //E enquanto a chave não for menor ou igual ao registro correspondente a posição do contador menos um
   if (Reg.Chave == Ap->r[i-1].Chave)//Caso o registro presente na árvore seja igual ao que será inserido:
-  { printf(" Erro: Registro ja esta presente em arvore!\n"); *Cresceu = 0;//Sem necessidade de inserção
+  { printf(" -->Erro: Registro ja esta presente em arvore!<--\n"); *Cresceu = 0;//Sem necessidade de inserção
     return;//Fim da chamada
   }
   if (Reg.Chave < Ap->r[i-1].Chave) i--;//Se o registro a ser inserido é menor que o registro contido na árvore:
@@ -157,7 +158,7 @@ void Ret(long Ch, Pont *Ap, short *Diminuiu)//Função que retira um registro da
 { long j, Ind = 1;
   Pont Pag;
   if (*Ap == NULL)//Caso o ponteiro da árvore seja vazio:
-  { printf("Erro: registro nao esta na arvore!\n"); *Diminuiu = 0;//Não há o que remover
+  { printf("-->Erro: registro nao esta na arvore!<--\n"); *Diminuiu = 0;//Não há o que remover
     return;//Fim da chamada
   }
   Pag = *Ap;//Apontador auxiliar para percorrer a árvore
